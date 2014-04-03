@@ -12,26 +12,21 @@ for(i = 0; i <= 60; i ++){
 		case -1:
 			printf("Houve erro na execucao");
 			exit(1);
-		if(i == 14){
-			printf("Nasce o Pai 1");
 			case 0:
 				printf("Sou o processo IDPai1: %d\n", getpid());
-				}
-		if(i == 26){
-			printf("Nasce o Neto 1");
-					idProcesso = fork();
-					switch(idProcesso){
-						case -1:
-							printf("Houve erro na execucao");
-							exit(1);
-						case 0:
-							printf("Sou o IDNeto1: %d\n", getpid());					
-						break;
-						default:
-							printf("Sou o processo Pai 1 de ID: %d, IDNeto1: %d\n", getpid(), idProcesso);
-						break;
-					}	
-				  }
+				idProcesso = fork();
+				switch(idProcesso){
+					case -1:
+						printf("Houve erro na execucao");
+						exit(1);
+					case 0:
+						printf("Sou o IDNeto1: %d\n", getpid());					
+					break;
+					default:
+						printf("Sou o processo Pai 1 de ID: %d, IDNeto1: %d\n", getpid(), idProcesso);
+					break;
+				}	
+	
 			break;
 		
 		default:
@@ -41,35 +36,31 @@ for(i = 0; i <= 60; i ++){
 				case -1:
 					printf("Houve erro na execucao");
 					exit(1);
-				if(i == 16){
 					printf("Nasce o Pai 2");
-					case 0:
-						printf("Sou o IDPai2: %d\n", getpid());	
-						}
-				if(i == 30){
-					printf("Nasce o Neto 2");
-							printf("");
-							idProcesso = fork();
-							switch(idProcesso){
-								case -1:
-									printf("Houve erro na execucao");
-									exit(1);
-								case 0:
-									printf("Sou o IDNeto2: %d\n", getpid());					
-								break;
-								default:
-									printf("Sou o processo Pai 2 de ID: %d, IDNeto2: %d\n", getpid(), idProcesso);
-								break;
-							}
-						}	
-					break;
-				}
+				case 0:
+					printf("Sou o IDPai2: %d\n", getpid());	
+					printf("");
+					idProcesso = fork();
+					switch(idProcesso){
+						case -1:
+							printf("Houve erro na execucao");
+							exit(1);
+						case 0:
+							printf("Sou o IDNeto2: %d\n", getpid());					
+						break;
+						default:
+							printf("Sou o processo Pai 2 de ID: %d, IDNeto2: %d\n", getpid(), idProcesso);
+						break;
+					}
+						
+				break;
 				default:
 					printf("Sou o processo IDAvo de ID: %d, IDPai2: %d\n", getpid(), idProcesso);
 				break;
-			  
+			}
 		break;
  	 }
 }
 kill(getpid(), 0);
+printf("Pai esta Morto: %d \n", getpid());
 }
