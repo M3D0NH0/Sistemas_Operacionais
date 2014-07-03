@@ -27,7 +27,7 @@ int main(){
 				
 				idProcesso = fork();
 				
-				
+				//pai 1 e filho1
 				switch(idProcesso){
 					case -1:
 						printf("Erro na execucao");
@@ -83,7 +83,7 @@ int main(){
 			printf("\n Relatorio do Sistema");
 			}
 			break;
-				
+				//avo e pai2
 			default:
 				printf("\n------Sou o avo de ID: %d", getppid());
 				printf("Relatorio do sistema\n");

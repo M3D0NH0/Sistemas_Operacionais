@@ -1,0 +1,29 @@
+
+Aluno: Guilherme Abreu da Silveira.
+Turma: ADS3 SENACRS Manhã - Sistemas Operacionais
+
+
+1- Com base na observação do comportamento do processo criado, identifique se o processo é I/O-
+bound ou CPU-bound? Justifique a resposta.
+
+	CPU Bound - Executa rapidamente e entra na fila de Pronto sempre que possivel, dependendo quase que somente do processador. I/O Bound - Executa mais lento pois precisa espera o tempo de E/S do seu processo. Alem de utilizar mais os processos de Entrada e Saida.
+
+2- Analise os efeitos gerados no caso de redução do tempo gasto na operação de E/S pelo processo I/O-bound.
+
+	O Processo I/O Bound Executa 4 vezes menos que o CPU-Bound sendo assim é mais lento que o mesmo, Pois possui um tempo de espera para E/S, já o CPU-Bound não.
+
+3- Identifique quais informações do PCB são estáticas ou dinâmicas e quais fazem parte do contexto de software e do contexto de hardware.
+
+	Frames,Prioridade e Tempo de Criação são estaticos pois são setados no inicio do processo, Estado, Tempo de UCP e PC são dinamicos pois mudam de acordo com a Execução. Os processos de Tempo de UCP, Estado, e Frames dependem do Hardware ja os outros do Software.
+
+4- Observe que em alguns momentos existem processos no estado de pronto porém nenhum em estado de execução. Explique o porquê dessa situação.
+
+	Por que quando um processo acaba de ser executado ele entra em um Delay para o proximo processo ser executado, sendo assim ele fica em estado de pronto até este tempo de espera acabar.
+
+5- Analise comparativamente a concorrência de dois processos CPU-bound executando em dois sistemas operacionais que se diferenciam apenas pelo valor da fatia de tempo.
+
+	Com a configuração inicial de Fatia de Tempo o Processo levou cerca de 1 Segundo em Estado de Execução e em Estado de Pronto. Logo Após mudando a Fatia de tempo ele aumenta o tempo em Execução e logo após entra em estado de pronto.
+
+6- Ao se eliminar um processo em estado de suspenso, o processo não é eliminado imediatamente. Reproduza essa situação no simulador e explique o porquê da situação.
+
+	Por que o processo só poderá ser eliminado quando ele se encontra na fila de execução não em modo Suspenso pois assim ele não executa qualquer Ordem que lhe deem até ser ordenado a voltar para a fila. E ele entra em suspensão para que o outro possa ser executado sendo assim não recebera nenhuma ordem até ser executado novamente.
